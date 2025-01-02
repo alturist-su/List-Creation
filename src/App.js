@@ -35,10 +35,6 @@ function App() {
           <div className="parent-list-container">
             <ListContainer listItems={listItems} />
             <ListContainer listItems={listItems} />
-            <ListContainer listItems={listItems} />
-            <ListContainer listItems={listItems} />
-            <ListContainer listItems={listItems} />
-            <ListContainer listItems={listItems} />
           </div>
         </Fragment>
       )}
