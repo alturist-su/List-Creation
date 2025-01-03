@@ -3,9 +3,12 @@ import "./ListItem.css";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-const ListItem = ({ list_id, list_number, name, description, setListItemsIn3 }) => {
+const ListItem = ({ list_id, list_number, name, description, setListItemsIn3, showThirdList }) => {
 
   const handleAddListItemsTo3Container = () => {
+    if (!showThirdList) {
+      return;
+    }
     setListItemsIn3((prevListItemsIn3) => [...prevListItemsIn3, { list_id, list_number: 3, name, description }]);
   }
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./ListContainer.css";
 import ListItem from "../ListItem/ListItem";
 
-const ListContainer = ({ listItems, listNumber, isListItemChecked, setIsListItemChecked, setListItemsIn3 }) => {
+const ListContainer = ({ listItems, listNumber, isListItemChecked, setIsListItemChecked, setListItemsIn3, showThirdList }) => {
 
   const handleCheckboxChange = () => {
     setIsListItemChecked(!isListItemChecked);
@@ -21,7 +21,7 @@ const ListContainer = ({ listItems, listNumber, isListItemChecked, setIsListItem
       </div>
       <div className="list_items">
         {listItems.map((eachItem) => (
-          <ListItem key={eachItem.id} list_id={eachItem.id} list_number={eachItem.list_number} name={eachItem.name} description={eachItem.description} setListItemsIn3={setListItemsIn3} />
+          <ListItem key={eachItem.id} list_id={eachItem.id} list_number={eachItem.list_number} name={eachItem.name} description={eachItem.description} setListItemsIn3={setListItemsIn3}  showThirdList={showThirdList}/>
         ))}
       </div>
     </div>
