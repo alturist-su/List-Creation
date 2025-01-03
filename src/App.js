@@ -83,11 +83,11 @@ function App() {
               <FailedView setShowFailedView={setShowFailedView} />
             ) : (
               <>
-                <ListContainer listItems={listItems} listNumber={1} isListItemChecked={isListItem1Checked} setIsListItemChecked={setIsListItem1Checked} setListItemsIn3={setListItemsIn3} />
+                <ListContainer listItems={listItems} listNumber={1} isListItemChecked={isListItem1Checked} setIsListItemChecked={setIsListItem1Checked} setListItemsIn3={setListItemsIn3} showThirdList={showThirdList} />
                 {showThirdList && (
                   <ListContainer listItems={listItemsIn3} listNumber={3} />
                 )}
-                <ListContainer listItems={listItems2} listNumber={2} isListItemChecked={isListItem2Checked} setIsListItemChecked={setIsListItem2Checked} setListItemsIn3={setListItemsIn3} />
+                <ListContainer listItems={listItems2} listNumber={2} isListItemChecked={isListItem2Checked} setIsListItemChecked={setIsListItem2Checked} setListItemsIn3={setListItemsIn3} showThirdList={showThirdList} />
               </>)}
           </div>
         </Fragment>
