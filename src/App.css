@@ -39,3 +39,13 @@
 
   padding: 20px;
 }
+
+.center-failed-view
+{
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  height: 100vh;
+  background-color: #f9f9f9;
+  padding-top: 10px;
+}

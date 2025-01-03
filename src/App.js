@@ -40,6 +40,7 @@ function App() {
       setListItems(list1);
       setListItems2(list2);
 
+
       setLoading(false);
     };
     fetchListItems();
@@ -49,6 +50,8 @@ function App() {
   const [isListItem1Checked, setIsListItem1Checked] = useState(false);
   const [isListItem2Checked, setIsListItem2Checked] = useState(false);
   const [showFailedView, setShowFailedView] = useState(false);
+
+  const [listItemsIn3, setListItemsIn3] = useState([]);
 
   const handleCreateNewList = () => {
     if (isListItem1Checked && isListItem2Checked) {
@@ -74,19 +77,18 @@ function App() {
             <button className="button" onClick={handleCreateNewList}>
               Create a New List
             </button>
-          </div>y
-          <div className="parent-list-container">
+          </div>
+          <div className={`parent-list-container ${showFailedView ? 'center-failed-view' : ''}`}>
             {showFailedView ? (
               <FailedView setShowFailedView={setShowFailedView} />
             ) : (
               <>
-                <ListContainer listItems={listItems} listNumber={1} />
+                <ListContainer listItems={listItems} listNumber={1} isListItemChecked={isListItem1Checked} setIsListItemChecked={setIsListItem1Checked} setListItemsIn3={setListItemsIn3} />
                 {showThirdList && (
-                  <ListContainer listItems={listItems2} listNumber={3} />
+                  <ListContainer listItems={listItemsIn3} listNumber={3} />
                 )}
-                <ListContainer listItems={listItems2} listNumber={2} />
-              </>
-            )}
+                <ListContainer listItems={listItems2} listNumber={2} isListItemChecked={isListItem2Checked} setIsListItemChecked={setIsListItem2Checked} setListItemsIn3={setListItemsIn3} />
+              </>)}
           </div>
         </Fragment>
       )}
